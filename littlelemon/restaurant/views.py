@@ -12,7 +12,7 @@ class UserViewSet(viewsets.ModelViewSet):
 class MenuView(generics.ListCreateAPIView):
     serializer_class = MenuSerializer
     queryset = Menu.objects.all()
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated | permissions.AllowAny]
 
 class SingleMenuView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
     serializer_class = MenuSerializer
